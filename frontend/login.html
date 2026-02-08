@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход - CodeMaster</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fas fa-code"></i>
+            </div>
+            <div class="logo-text">CodeMaster</div>
+        </div>
+        
+        <div class="nav-links">
+            <a href="index.html">
+                <i class="fas fa-home"></i> Главная
+            </a>
+            <a href="register.html" class="btn btn-secondary">
+                <i class="fas fa-user-plus"></i> Регистрация
+            </a>
+        </div>
+    </nav>
+
+    <!-- Форма входа -->
+    <section class="section">
+        <div class="container">
+            <div class="form-container fade-in">
+                <div class="form-title">
+                    <h2>Вход в аккаунт</h2>
+                    <p style="color: var(--gray); margin-top: 10px;">Войдите, чтобы продолжить обучение</p>
+                </div>
+                
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="username" class="form-label">
+                            <i class="fas fa-user" style="margin-right: 8px;"></i> Имя пользователя или Email
+                        </label>
+                        <input type="text" id="username" name="username" class="form-input" 
+                               placeholder="Введите имя пользователя или email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password" class="form-label">
+                            <i class="fas fa-lock" style="margin-right: 8px;"></i> Пароль
+                        </label>
+                        <input type="password" id="password" name="password" class="form-input" 
+                               placeholder="Введите ваш пароль" required>
+                        <div style="text-align: right; margin-top: 5px;">
+                            <a href="#" style="color: var(--orange-primary); font-size: 0.9rem;">
+                                Забыли пароль?
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="checkbox-label" style="display: flex; align-items: center; cursor: pointer;">
+                            <input type="checkbox" id="remember" name="remember" style="margin-right: 10px;">
+                            <span>Запомнить меня</span>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px;">
+                        <i class="fas fa-sign-in-alt"></i> Войти
+                    </button>
+                    
+                    <div style="text-align: center; margin: 20px 0; color: var(--gray); position: relative;">
+                        <span style="background: var(--black-card); padding: 0 15px; position: relative; z-index: 1;">
+                            или войдите с помощью
+                        </span>
+                        <div style="position: absolute; top: 50%; left: 0; right: 0; height: 1px; background: var(--black-border); z-index: 0;"></div>
+                    </div>
+                    
+                    <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+                        <button type="button" class="btn btn-ghost" style="flex: 1;">
+                            <i class="fab fa-google"></i> Google
+                        </button>
+                        <button type="button" class="btn btn-ghost" style="flex: 1;">
+                            <i class="fab fa-github"></i> GitHub
+                        </button>
+                    </button>
+                </form>
+                
+                <div class="form-footer">
+                    <p>Нет аккаунта? <a href="register.html" style="color: var(--orange-primary); font-weight: 600;">Зарегистрироваться</a></p>
+                    <p style="margin-top: 10px;"><a href="index.html" style="color: var(--gray);"><i class="fas fa-arrow-left"></i> Вернуться на главную</a></p>
+                </div>
+                
+                <div id="message" style="margin-top: 20px;"></div>
+            </div>
+            
+            <!-- Преимущества входа -->
+            <div class="categories-grid" style="margin-top: 60px;">
+                <div class="card fade-in">
+                    <div class="card-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <h3>Продолжите с места остановки</h3>
+                    <p>Ваш прогресс обучения сохранён и ждёт вас. Начните именно с той темы, на которой остановились</p>
+                </div>
+                
+                <div class="card fade-in" style="animation-delay: 0.1s;">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Полная статистика</h3>
+                    <p>Анализируйте свои успехи: время обучения, пройденные статьи, заработанные награды</p>
+                </div>
+                
+                <div class="card fade-in" style="animation-delay: 0.2s;">
+                    <div class="card-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>Персональные рекомендации</h3>
+                    <p>Получайте индивидуальные рекомендации статей на основе ваших интересов и прогресса</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo" style="margin-bottom: 20px;">
+                        <div class="logo-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="logo-text">CodeMaster</div>
+                    </div>
+                    <p>Интерактивная платформа для изучения программирования с элементами геймификации.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Быстрые ссылки</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="articles.html">Статьи</a></li>
+                        <li><a href="register.html">Регистрация</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2024 CodeMaster. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/ui.js"></script>
+    <script>
+        // Анимация при загрузке
+        document.addEventListener('DOMContentLoaded', function() {
+            showNotification('Войдите в свой аккаунт', 'info');
+        });
+        
+        // Обработка формы входа
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const remember = document.getElementById('remember').checked;
+            
+            // Валидация
+            if (!username || !password) {
+                showNotification('Заполните все поля', 'error');
+                return;
+            }
+            
+            try {
+                showNotification('Выполняется вход...', 'info');
+                
+                // Здесь будет вызов API
+                // await authAPI.login(username, password);
+                
+                // Для демонстрации используем имитацию
+                setTimeout(() => {
+                    showNotification('Вход выполнен успешно! Перенаправляем...', 'success');
+                    
+                    // Сохраняем данные пользователя (временное решение до реализации бэкенда)
+                    localStorage.setItem('user_data', JSON.stringify({
+                        username: username,
+                        level: Math.floor(Math.random() * 10) + 1,
+                        experience_points: Math.floor(Math.random() * 1000),
+                        articles_completed: Math.floor(Math.random() * 20)
+                    }));
+                    
+                    // Если выбрано "Запомнить меня"
+                    if (remember) {
+                        localStorage.setItem('remember_me', 'true');
+                    }
+                    
+                    // Перенаправление на главную
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 1500);
+                }, 1000);
+                
+            } catch (error) {
+                showNotification(error.message || 'Ошибка входа', 'error');
+            }
+        });
+        
+        // Автозаполнение для демонстрации
+        document.addEventListener('DOMContentLoaded', function() {
+            // Для демонстрации предзаполняем форму тестовыми данными
+            if (window.location.search.includes('demo=true')) {
+                document.getElementById('username').value = 'demo_user';
+                document.getElementById('password').value = 'password123';
+                document.getElementById('remember').checked = true;
+                showNotification('Демо-данные загружены. Нажмите "Войти" для продолжения.', 'info');
+            }
+        });
+        
+        // Функция показа уведомлений (копия из register.html)
+        function showNotification(message, type = 'info') {
+            // Создаем новое уведомление, если его нет
+            let notification = document.getElementById('notification');
+            if (!notification) {
+                notification = document.createElement('div');
+                notification.id = 'notification';
+                notification.className = 'notification';
+                notification.innerHTML = `
+                    <div class="notification-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <div class="notification-content">
+                        <p>${message}</p>
+                    </div>
+                `;
+                document.body.appendChild(notification);
+            } else {
+                const icon = notification.querySelector('.notification-icon i');
+                const content = notification.querySelector('.notification-content p');
+                content.textContent = message;
+                
+                // Обновляем классы
+                notification.className = `notification notification-${type}`;
+                
+                switch(type) {
+                    case 'success':
+                        icon.className = 'fas fa-check-circle';
+                        break;
+                    case 'error':
+                        icon.className = 'fas fa-exclamation-circle';
+                        break;
+                    case 'warning':
+                        icon.className = 'fas fa-exclamation-triangle';
+                        break;
+                    default:
+                        icon.className = 'fas fa-info-circle';
+                }
+            }
+            
+            // Показываем уведомление
+            notification.classList.add('show');
+            
+            // Скрываем через 5 секунд
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 5000);
+        }
+    </script>
+</body>
+</html>

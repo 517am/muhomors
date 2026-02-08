@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация - CodeMaster</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fas fa-code"></i>
+            </div>
+            <div class="logo-text">CodeMaster</div>
+        </div>
+        
+        <div class="nav-links">
+            <a href="index.html">
+                <i class="fas fa-home"></i> Главная
+            </a>
+            <a href="login.html" class="btn btn-secondary">
+                <i class="fas fa-sign-in-alt"></i> Войти
+            </a>
+        </div>
+    </nav>
+
+    <!-- Форма регистрации -->
+    <section class="section">
+        <div class="container">
+            <div class="form-container fade-in">
+                <div class="form-title">
+                    <h2>Создание аккаунта</h2>
+                    <p style="color: var(--gray); margin-top: 10px;">Присоединяйся к сообществу разработчиков</p>
+                </div>
+                
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="username" class="form-label">
+                            <i class="fas fa-user" style="margin-right: 8px;"></i> Имя пользователя
+                        </label>
+                        <input type="text" id="username" name="username" class="form-input" 
+                               placeholder="Придумайте уникальное имя" required>
+                        <div class="form-hint">От 3 до 20 символов, только буквы и цифры</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">
+                            <i class="fas fa-envelope" style="margin-right: 8px;"></i> Email адрес
+                        </label>
+                        <input type="email" id="email" name="email" class="form-input" 
+                               placeholder="your@email.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password" class="form-label">
+                            <i class="fas fa-lock" style="margin-right: 8px;"></i> Пароль
+                        </label>
+                        <input type="password" id="password" name="password" class="form-input" 
+                               placeholder="Минимум 6 символов" minlength="6" required>
+                        <div class="password-strength">
+                            <div class="strength-bar"></div>
+                            <div class="strength-text">Надёжность пароля: <span>слабый</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirmPassword" class="form-label">
+                            <i class="fas fa-lock" style="margin-right: 8px;"></i> Подтверждение пароля
+                        </label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" class="form-input" 
+                               placeholder="Повторите пароль" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="checkbox-label" style="display: flex; align-items: center; cursor: pointer;">
+                            <input type="checkbox" id="terms" name="terms" required style="margin-right: 10px;">
+                            <span>Я согласен с <a href="#" style="color: var(--orange-primary);">условиями использования</a> и <a href="#" style="color: var(--orange-primary);">политикой конфиденциальности</a></span>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px;">
+                        <i class="fas fa-user-plus"></i> Создать аккаунт
+                    </button>
+                </form>
+                
+                <div class="form-footer">
+                    <p>Уже есть аккаунт? <a href="login.html" style="color: var(--orange-primary); font-weight: 600;">Войти</a></p>
+                    <p style="margin-top: 10px;"><a href="index.html" style="color: var(--gray);"><i class="fas fa-arrow-left"></i> Вернуться на главную</a></p>
+                </div>
+                
+                <div id="message" style="margin-top: 20px;"></div>
+            </div>
+            
+            <!-- Преимущества регистрации -->
+            <div class="categories-grid" style="margin-top: 60px;">
+                <div class="card fade-in">
+                    <div class="card-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Отслеживание прогресса</h3>
+                    <p>Сохраняйте свой прогресс обучения, заработанные очки и полученные бейджи</p>
+                </div>
+                
+                <div class="card fade-in" style="animation-delay: 0.1s;">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Персональная статистика</h3>
+                    <p>Анализируйте свои успехи с помощью подробной статистики и графиков</p>
+                </div>
+                
+                <div class="card fade-in" style="animation-delay: 0.2s;">
+                    <div class="card-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>Уникальные достижения</h3>
+                    <p>Открывайте бейджи за прохождение статей и выполнение специальных заданий</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo" style="margin-bottom: 20px;">
+                        <div class="logo-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="logo-text">CodeMaster</div>
+                    </div>
+                    <p>Интерактивная платформа для изучения программирования с элементами геймификации.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Быстрые ссылки</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="articles.html">Статьи</a></li>
+                        <li><a href="login.html">Вход</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2024 CodeMaster. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/ui.js"></script>
+    <script>
+        // Анимация при загрузке
+        document.addEventListener('DOMContentLoaded', function() {
+            showNotification('Добро пожаловать на страницу регистрации!', 'info');
+        });
+        
+        // Проверка силы пароля
+        const passwordInput = document.getElementById('password');
+        const strengthBar = document.querySelector('.strength-bar');
+        const strengthText = document.querySelector('.strength-text span');
+        
+        passwordInput.addEventListener('input', function() {
+            const password = this.value;
+            let strength = 0;
+            
+            if (password.length >= 6) strength++;
+            if (password.length >= 8) strength++;
+            if (/[A-Z]/.test(password)) strength++;
+            if (/[0-9]/.test(password)) strength++;
+            if (/[^A-Za-z0-9]/.test(password)) strength++;
+            
+            const colors = ['#ff3333', '#ffaa00', '#ffaa00', '#00cc66', '#00cc66'];
+            const texts = ['очень слабый', 'слабый', 'средний', 'сильный', 'очень сильный'];
+            
+            strengthBar.style.width = (strength * 20) + '%';
+            strengthBar.style.backgroundColor = colors[strength - 1] || '#ff3333';
+            strengthText.textContent = texts[strength - 1] || 'очень слабый';
+            strengthText.style.color = colors[strength - 1] || '#ff3333';
+        });
+        
+        // Проверка подтверждения пароля
+        const confirmPasswordInput = document.getElementById('confirmPassword');
+        
+        confirmPasswordInput.addEventListener('input', function() {
+            const password = passwordInput.value;
+            const confirmPassword = this.value;
+            
+            if (confirmPassword && password !== confirmPassword) {
+                this.style.borderColor = 'var(--error)';
+                showNotification('Пароли не совпадают', 'error');
+            } else if (confirmPassword) {
+                this.style.borderColor = 'var(--success)';
+            } else {
+                this.style.borderColor = 'var(--black-border)';
+            }
+        });
+        
+        // Обработка формы регистрации
+        document.getElementById('registerForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const terms = document.getElementById('terms').checked;
+            
+            // Валидация
+            if (!terms) {
+                showNotification('Необходимо согласиться с условиями использования', 'error');
+                return;
+            }
+            
+            if (password !== confirmPassword) {
+                showNotification('Пароли не совпадают', 'error');
+                return;
+            }
+            
+            if (password.length < 6) {
+                showNotification('Пароль должен быть минимум 6 символов', 'error');
+                return;
+            }
+            
+            // Отправка данных
+            try {
+                showNotification('Регистрируем аккаунт...', 'info');
+                
+                // Здесь будет вызов API
+                // await authAPI.register(username, email, password);
+                
+                // Для демонстрации используем имитацию
+                setTimeout(() => {
+                    showNotification('Регистрация успешна! Перенаправляем...', 'success');
+                    
+                    // Сохраняем данные пользователя (временное решение до реализации бэкенда)
+                    localStorage.setItem('user_data', JSON.stringify({
+                        username: username,
+                        email: email
+                    }));
+                    
+                    // Перенаправление на страницу входа
+                    setTimeout(() => {
+                        window.location.href = 'login.html';
+                    }, 1500);
+                }, 1000);
+                
+            } catch (error) {
+                showNotification(error.message || 'Ошибка регистрации', 'error');
+            }
+        });
+        
+        // Функция показа уведомлений
+        function showNotification(message, type = 'info') {
+            const notification = document.getElementById('notification');
+            const icon = notification.querySelector('.notification-icon i');
+            const content = notification.querySelector('.notification-content p');
+            
+            // Обновляем уведомление
+            content.textContent = message;
+            notification.className = `notification notification-${type}`;
+            
+            switch(type) {
+                case 'success':
+                    icon.className = 'fas fa-check-circle';
+                    break;
+                case 'error':
+                    icon.className = 'fas fa-exclamation-circle';
+                    break;
+                case 'warning':
+                    icon.className = 'fas fa-exclamation-triangle';
+                    break;
+                default:
+                    icon.className = 'fas fa-info-circle';
+            }
+            
+            // Показываем уведомление
+            notification.classList.add('show');
+            
+            // Скрываем через 5 секунд
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 5000);
+        }
+    </script>
+    
+    <style>
+        .form-hint {
+            color: var(--gray);
+            font-size: 0.85rem;
+            margin-top: 5px;
+        }
+        
+        .password-strength {
+            margin-top: 10px;
+        }
+        
+        .strength-bar {
+            height: 4px;
+            background: var(--gray);
+            border-radius: 2px;
+            margin-bottom: 5px;
+            transition: width 0.3s ease, background-color 0.3s ease;
+        }
+        
+        .strength-text {
+            color: var(--gray);
+            font-size: 0.85rem;
+        }
+        
+        .checkbox-label {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .checkbox-label input {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--orange-primary);
+        }
+    </style>
+</body>
+</html>
