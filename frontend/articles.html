@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курсы | CodeFlow</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/articles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-inner">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <span>CodeFlow</span>
+                </a>
+                
+                <div class="nav-links">
+                    <a href="index.html">Главная</a>
+                    <a href="articles.html" class="nav-link active">
+                        <i class="fas fa-book"></i> Курсы
+                    </a>
+                    <a href="dashboard.html">
+                        <i class="fas fa-chart-line"></i> Прогресс
+                    </a>
+                    <a href="login.html" class="btn btn-secondary">
+                        Войти
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Заголовок страницы -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1>Все курсы</h1>
+                <p class="lead">Выберите интересующее направление и начните обучение</p>
+                
+                <div class="search-filter">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Поиск курсов...">
+                    </div>
+                    
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">Все</button>
+                        <button class="filter-btn" data-filter="python">Python</button>
+                        <button class="filter-btn" data-filter="javascript">JavaScript</button>
+                        <button class="filter-btn" data-filter="algorithms">Алгоритмы</button>
+                        <button class="filter-btn" data-filter="web">Веб-разработка</button>
+                        <button class="filter-btn" data-filter="database">Базы данных</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Основной контент -->
+    <section class="articles-section">
+        <div class="container">
+            <!-- Сортировка -->
+            <div class="sorting-bar">
+                <div class="sorting-options">
+                    <span class="sort-label">Сортировка:</span>
+                    <select id="sortSelect" class="sort-select">
+                        <option value="popular">По популярности</option>
+                        <option value="new">По новизне</option>
+                        <option value="difficulty">По сложности</option>
+                        <option value="duration">По длительности</option>
+                    </select>
+                </div>
+                
+                <div class="results-info">
+                    <span id="resultsCount">15</span> курсов найдено
+                </div>
+            </div>
+            
+            <!-- Сетка курсов -->
+            <div class="articles-grid" id="coursesGrid">
+                <!-- Курс 1 -->
+                <article class="article-card course-card" data-category="python" data-difficulty="beginner" data-duration="8">
+                    <div class="course-header">
+                        <span class="course-category">Python</span>
+                        <span class="course-difficulty beginner">Начальный</span>
+                    </div>
+                    
+                    <div class="course-body">
+                        <h3 class="course-title">Python для начинающих</h3>
+                        <p class="course-description">
+                            Изучите основы Python: синтаксис, типы данных, функции и ООП. 
+                            Идеально для тех, кто только начинает программировать.
+                        </p>
+                        
+                        <div class="course-stats">
+                            <div class="stat">
+                                <i class="fas fa-clock"></i>
+                                <span>8 часов</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-user-graduate"></i>
+                                <span>2,500+ студентов</span>
+                            </div>
+                            <div class="stat">
+                                <!-- Рейтинг будет добавлен JavaScript -->
+                                <span>4.8</span>
+                            </div>
+                        </div>
+                        
+                        <div class="course-meta">
+                            <div class="instructor">
+                                <div class="instructor-avatar">ИИ</div>
+                                <span class="instructor-name">Иван Иванов</span>
+                            </div>
+                            <div class="course-reward">
+                                <i class="fas fa-medal"></i>
+                                <span>+100 XP</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="course-footer">
+                        <button class="btn btn-primary start-course">
+                            <i class="fas fa-play"></i> Начать курс
+                        </button>
+                    </div>
+                </article>
+                
+                <!-- Курс 2 -->
+                <article class="article-card course-card" data-category="javascript" data-difficulty="intermediate" data-duration="12">
+                    <div class="course-header">
+                        <span class="course-category">JavaScript</span>
+                        <span class="course-difficulty intermediate">Средний</span>
+                    </div>
+                    
+                    <div class="course-body">
+                        <h3 class="course-title">Современный JavaScript</h3>
+                        <p class="course-description">
+                            ES6+, асинхронное программирование, работа с DOM. 
+                            Все инструменты для создания интерактивных веб-приложений.
+                        </p>
+                        
+                        <div class="course-stats">
+                            <div class="stat">
+                                <i class="fas fa-clock"></i>
+                                <span>12 часов</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-user-graduate"></i>
+                                <span>1,800+ студентов</span>
+                            </div>
+                            <div class="stat">
+                                <span>4.9</span>
+                            </div>
+                        </div>
+                        
+                        <div class="course-meta">
+                            <div class="instructor">
+                                <div class="instructor-avatar">АС</div>
+                                <span class="instructor-name">Анна Сидорова</span>
+                            </div>
+                            <div class="course-reward">
+                                <i class="fas fa-medal"></i>
+                                <span>+150 XP</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="course-footer">
+                        <button class="btn btn-primary start-course">
+                            <i class="fas fa-play"></i> Начать курс
+                        </button>
+                    </div>
+                </article>
+                
+                <!-- Курс 3 -->
+                <article class="article-card course-card" data-category="algorithms" data-difficulty="advanced" data-duration="15">
+                    <div class="course-header">
+                        <span class="course-category">Алгоритмы</span>
+                        <span class="course-difficulty advanced">Продвинутый</span>
+                    </div>
+                    
+                    <div class="course-body">
+                        <h3 class="course-title">Структуры данных и алгоритмы</h3>
+                        <p class="course-description">
+                            Массивы, связные списки, деревья, графы. Алгоритмы сортировки, 
+                            поиска и динамическое программирование.
+                        </p>
+                        
+                        <div class="course-stats">
+                            <div class="stat">
+                                <i class="fas fa-clock"></i>
+                                <span>15 часов</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-user-graduate"></i>
+                                <span>900+ студентов</span>
+                            </div>
+                            <div class="stat">
+                                <span>4.7</span>
+                            </div>
+                        </div>
+                        
+                        <div class="course-meta">
+                            <div class="instructor">
+                                <div class="instructor-avatar">ПП</div>
+                                <span class="instructor-name">Петр Петров</span>
+                            </div>
+                            <div class="course-reward">
+                                <i class="fas fa-medal"></i>
+                                <span>+200 XP</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="course-footer">
+                        <button class="btn btn-primary start-course">
+                            <i class="fas fa-play"></i> Начать курс
+                        </button>
+                    </div>
+                </article>
+                
+                <!-- Курс 4 -->
+                <article class="article-card course-card" data-category="web" data-difficulty="intermediate" data-duration="10">
+                    <div class="course-header">
+                        <span class="course-category">Веб-разработка</span>
+                        <span class="course-difficulty intermediate">Средний</span>
+                    </div>
+                    
+                    <div class="course-body">
+                        <h3 class="course-title">React + TypeScript</h3>
+                        <p class="course-description">
+                            Создание современных веб-приложений с React и TypeScript. 
+                            Хуки, контекст, маршрутизация и state management.
+                        </p>
+                        
+                        <div class="course-stats">
+                            <div class="stat">
+                                <i class="fas fa-clock"></i>
+                                <span>10 часов</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-user-graduate"></i>
+                                <span>1,200+ студентов</span>
+                            </div>
+                            <div class="stat">
+                                <span>4.8</span>
+                            </div>
+                        </div>
+                        
+                        <div class="course-meta">
+                            <div class="instructor">
+                                <div class="instructor-avatar">МК</div>
+                                <span class="instructor-name">Мария Козлова</span>
+                            </div>
+                            <div class="course-reward">
+                                <i class="fas fa-medal"></i>
+                                <span>+180 XP</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="course-footer">
+                        <button class="btn btn-primary start-course">
+                            <i class="fas fa-play"></i> Начать курс
+                        </button>
+                    </div>
+                </article>
+                
+                <!-- Курс 5 -->
+                <article class="article-card course-card" data-category="database" data-difficulty="beginner" data-duration="6">
+                    <div class="course-header">
+                        <span class="course-category">Базы данных</span>
+                        <span class="course-difficulty beginner">Начальный</span>
+                    </div>
+                    
+                    <div class="course-body">
+                        <h3 class="course-title">SQL для начинающих</h3>
+                        <p class="course-description">
+                            Основы SQL: создание таблиц, запросы SELECT, JOIN, агрегатные функции. 
+                            Работа с PostgreSQL и SQLite.
+                        </p>
+                        
+                        <div class="course-stats">
+                            <div class="stat">
+                                <i class="fas fa-clock"></i>
+                                <span>6 часов</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-user-graduate"></i>
+                                <span>1,500+ студентов</span>
+                            </div>
+                            <div class="stat">
+                                <span>4.6</span>
+                            </div>
+                        </div>
+                        
+                        <div class="course-meta">
+                            <div class="instructor">
+                                <div class="instructor-avatar">СВ</div>
+                                <span class="instructor-name">Сергей Васильев</span>
+                            </div>
+                            <div class="course-reward">
+                                <i class="fas fa-medal"></i>
+                                <span>+120 XP</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="course-footer">
+                        <button class="btn btn-primary start-course">
+                            <i class="fas fa-play"></i> Начать курс
+                        </button>
+                    </div>
+                </article>
+                
+                <!-- Курс 6 -->
+                <article class="article-card course-card" data-category="python" data-difficulty="advanced" data-duration="20">
+                    <div class="course-header">
+                        <span class="course-category">Python</span>
+                        <span class="course-difficulty advanced">Продвинутый</span>
+                    </div>
+                    
+                    <div class="course-body">
+                        <h3 class="course-title">Python для Data Science</h3>
+                        <p class="course-description">
+                            NumPy, Pandas, Matplotlib, Scikit-learn. Анализ данных, 
+                            визуализация и машинное обучение на Python.
+                        </p>
+                        
+                        <div class="course-stats">
+                            <div class="stat">
+                                <i class="fas fa-clock"></i>
+                                <span>20 часов</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-user-graduate"></i>
+                                <span>800+ студентов</span>
+                            </div>
+                            <div class="stat">
+                                <span>4.9</span>
+                            </div>
+                        </div>
+                        
+                        <div class="course-meta">
+                            <div class="instructor">
+                                <div class="instructor-avatar">ЕН</div>
+                                <span class="instructor-name">Елена Николаева</span>
+                            </div>
+                            <div class="course-reward">
+                                <i class="fas fa-medal"></i>
+                                <span>+250 XP</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="course-footer">
+                        <button class="btn btn-primary start-course">
+                            <i class="fas fa-play"></i> Начать курс
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Курс 7 -->
+                <article class="article-card course-card" data-category="web" data-difficulty="beginner" data-duration="8">
+                    <div class="course-header">
+                        <span class="course-category">Веб-разработка</span>
+                        <span class="course-difficulty beginner">Начальный</span>
+                    </div>
+                    
+                    <div class="course-body">
+                        <h3 class="course-title">HTML & CSS с нуля</h3>
+                        <p class="course-description">
+                            Основы вёрстки: семантический HTML, современный CSS, Flexbox, Grid. 
+                            Создание адаптивных веб-страниц.
+                        </p>
+                        
+                        <div class="course-stats">
+                            <div class="stat">
+                                <i class="fas fa-clock"></i>
+                                <span>8 часов</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-user-graduate"></i>
+                                <span>3,000+ студентов</span>
+                            </div>
+                            <div class="stat">
+                                <span>4.7</span>
+                            </div>
+                        </div>
+                        
+                        <div class="course-meta">
+                            <div class="instructor">
+                                <div class="instructor-avatar">АЛ</div>
+                                <span class="instructor-name">Алексей Ли</span>
+                            </div>
+                            <div class="course-reward">
+                                <i class="fas fa-medal"></i>
+                                <span>+100 XP</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="course-footer">
+                        <button class="btn btn-primary start-course">
+                            <i class="fas fa-play"></i> Начать курс
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Курс 8 -->
+                <article class="article-card course-card" data-category="python" data-difficulty="intermediate" data-duration="14">
+                    <div class="course-header">
+                        <span class="course-category">Python</span>
+                        <span class="course-difficulty intermediate">Средний</span>
+                    </div>
+                    
+                    <div class="course-body">
+                        <h3 class="course-title">FastAPI: Современные API</h3>
+                        <p class="course-description">
+                            Создание быстрых и современных REST API с FastAPI. 
+                            Асинхронность, документация OpenAPI, авторизация.
+                        </p>
+                        
+                        <div class="course-stats">
+                            <div class="stat">
+                                <i class="fas fa-clock"></i>
+                                <span>14 часов</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-user-graduate"></i>
+                                <span>600+ студентов</span>
+                            </div>
+                            <div class="stat">
+                                <span>4.9</span>
+                            </div>
+                        </div>
+                        
+                        <div class="course-meta">
+                            <div class="instructor">
+                                <div class="instructor-avatar">ДК</div>
+                                <span class="instructor-name">Дмитрий Кузнецов</span>
+                            </div>
+                            <div class="course-reward">
+                                <i class="fas fa-medal"></i>
+                                <span>+200 XP</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="course-footer">
+                        <button class="btn btn-primary start-course">
+                            <i class="fas fa-play"></i> Начать курс
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Курс 9 -->
+                <article class="article-card course-card" data-category="javascript" data-difficulty="advanced" data-duration="16">
+                    <div class="course-header">
+                        <span class="course-category">JavaScript</span>
+                        <span class="course-difficulty advanced">Продвинутый</span>
+                    </div>
+                    
+                    <div class="course-body">
+                        <h3 class="course-title">Node.js и архитектура приложений</h3>
+                        <p class="course-description">
+                            Создание серверных приложений на Node.js. Паттерны проектирования, 
+                            микросервисы, кэширование и оптимизация.
+                        </p>
+                        
+                        <div class="course-stats">
+                            <div class="stat">
+                                <i class="fas fa-clock"></i>
+                                <span>16 часов</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-user-graduate"></i>
+                                <span>400+ студентов</span>
+                            </div>
+                            <div class="stat">
+                                <span>4.8</span>
+                            </div>
+                        </div>
+                        
+                        <div class="course-meta">
+                            <div class="instructor">
+                                <div class="instructor-avatar">ОШ</div>
+                                <span class="instructor-name">Ольга Широкова</span>
+                            </div>
+                            <div class="course-reward">
+                                <i class="fas fa-medal"></i>
+                                <span>+220 XP</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="course-footer">
+                        <button class="btn btn-primary start-course">
+                            <i class="fas fa-play"></i> Начать курс
+                        </button>
+                    </div>
+                </article>
+            </div>
+            
+            <!-- Пагинация -->
+            <div class="pagination">
+                <button class="pagination-btn" disabled>
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="pagination-btn active">1</button>
+                <button class="pagination-btn">2</button>
+                <button class="pagination-btn">3</button>
+                <button class="pagination-btn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <a href="index.html" class="logo" style="color: var(--white);">
+                        <div class="logo-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        CodeFlow
+                    </a>
+                    <p class="mt-3" style="max-width: 300px;">
+                        Элегантная платформа для изучения программирования.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3>Категории</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" data-filter="python">Python</a></li>
+                        <li><a href="#" data-filter="javascript">JavaScript</a></li>
+                        <li><a href="#" data-filter="algorithms">Алгоритмы</a></li>
+                        <li><a href="#" data-filter="web">Веб-разработка</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3>Навигация</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="articles.html">Курсы</a></li>
+                        <li><a href="dashboard.html">Прогресс</a></li>
+                        <li><a href="login.html">Войти</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2024 CodeFlow. Элегантное обучение программированию.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/articles.js"></script>
+    
+    <style>
+        /* Стили для страницы курсов */
+        .page-header {
+            padding: 100px 0 60px;
+            background: linear-gradient(135deg, var(--light) 0%, rgba(242, 233, 228, 0.8) 100%);
+            position: relative;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(154, 140, 152, 0.3), 
+                transparent);
+        }
+
+        .page-header-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .lead {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+
+        .search-filter {
+            max-width: 800px;
+            margin: 40px auto 0;
+        }
+
+        .search-box {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 18px 20px 18px 50px;
+            background: var(--white);
+            border: 2px solid rgba(42, 45, 67, 0.1);
+            border-radius: var(--radius-lg);
+            font-size: 1rem;
+            transition: var(--transition-smooth);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 
+                0 0 0 3px rgba(154, 140, 152, 0.1),
+                var(--shadow-md);
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 10px 24px;
+            background: var(--white);
+            border: 1px solid rgba(42, 45, 67, 0.15);
+            border-radius: var(--radius-full);
+            color: var(--secondary);
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .filter-btn:hover {
+            background: rgba(154, 140, 152, 0.05);
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            color: var(--white);
+            border-color: transparent;
+            box-shadow: 0 4px 15px rgba(154, 140, 152, 0.3);
+        }
+
+        .articles-section {
+            padding: 60px 0 80px;
+            background: var(--light);
+        }
+
+        .sorting-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(42, 45, 67, 0.1);
+        }
+
+        .sorting-options {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .sort-label {
+            color: var(--secondary);
+            font-size: 0.95rem;
+        }
+
+        .sort-select {
+            padding: 10px 16px;
+            border: 1px solid rgba(42, 45, 67, 0.2);
+            border-radius: var(--radius-md);
+            background: var(--white);
+            color: var(--primary);
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .sort-select:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .results-info {
+            color: var(--secondary);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .results-info span {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .articles-grid {
+            display: grid;
+            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 60px;
+        }
+
+        .pagination-btn {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--white);
+            border: 1px solid rgba(42, 45, 67, 0.1);
+            border-radius: var(--radius-md);
+            color: var(--secondary);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            font-weight: 500;
+        }
+
+        .pagination-btn:hover:not(:disabled),
+        .pagination-btn.active {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            color: var(--white);
+            border-color: transparent;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(154, 140, 152, 0.2);
+        }
+
+        .pagination-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 80px 0 40px;
+            }
+
+            .sorting-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+
+            .filter-buttons {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 10px;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .filter-btn {
+                padding: 8px 20px;
+                font-size: 0.9rem;
+                flex-shrink: 0;
+            }
+
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .lead {
+                font-size: 1.1rem;
+            }
+
+            .search-box input {
+                padding: 16px 20px 16px 50px;
+                font-size: 0.95rem;
+            }
+
+            .sorting-options {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .pagination-btn {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+</body>
+</html>
